@@ -13,5 +13,6 @@ class Dot:
 first = Dot(0, 0)
 second = Dot
 first.print_info()
+
 second = Dot(0, 0)
 second.print_info()
