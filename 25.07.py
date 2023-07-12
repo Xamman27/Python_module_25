@@ -38,6 +38,7 @@ class PotatoGarden:
         else:
             print('Вся картошка созрела. Можно собирать!\n')
 
+
 my_garden = PotatoGarden(5)
 my_garden.are_all_ripe()
 my_garden.grow_all()
