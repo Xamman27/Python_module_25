@@ -10,7 +10,7 @@ class Toyota:
         print('Color is{}\nPrice is {}\nMaximal speed is {}\nCurrent speed is {}'.format(
             self.color, self.price, self.max_speed, self.current_speed))
 
-    def set_speed(self,speed):
+    def set_speed(self, speed):
         self.current_speed = speed
 
 
