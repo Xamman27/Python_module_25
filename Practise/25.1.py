@@ -1,11 +1,14 @@
 import random
-class Warrior:
+
+
+class Warrior():
+
     def __init__(self, name):
         self.health = 100
         self.name = name
 
     def info_health(self):
-        print("{}have health is {}".format(self.name, self.health))
+        print(f"{self.name} have health is {self.health}")
 
     def damage(self, defender):
         if type(self) == type(defender):
@@ -14,26 +17,18 @@ class Warrior:
            raise TypeError
 
 
-players = []
-player_1 = Warrior("Scorpion")
-player_2 = Warrior("chan")
-
-players.append(player_1)
-players.append(player_2)
-
+scorpion = Warrior("Scorpion")
+chan = Warrior("Chan")
 while True:
-    choose = int(input('Enter 1 for warriors attack each other\n'
-                   'Enter 2 for exit from this battle: '))
+    choose = int(input('Enter 1 for warriors attack each other\n''Enter 2 for exit from this battle: '))
     if choose == 1:
-        randon_num = random.randint(0, 1)
-        players[0].info_health()
-        players[1].info_health()
-        players[randon_num].damage(players[randon_num - 1])
-        print(
-            f'{players[randon_num].name} attacks {players[randon_num - 1].name}\n Healths {players[randon_num - 1].name}'
-            f' is {players[randon_num - 1].info_health}')
-        if players[randon_num - 1].health == 0:
-            print(players[randon_num].name,' is win')
+        offense = random.choice([scorpion, chan])
+        defender = scorpion if offense == chan else chan
+        offense.damage(defender)
+        print(f'{offense.name} attack {defender.name}')
+        defender.info_health()
+        if defender.health == 0:
+            print(f'{offense.name} is win')
             break
     elif choose == 2:
         break
